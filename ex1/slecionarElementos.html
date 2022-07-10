@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecionar Elementos</title>
+</head>
+
+<body>
+
+  <ul id="lista">
+    <li class="teste1">teste1</li>
+    <li class="teste2">teste2</li>
+    <li name="teste3">teste3</li>
+    <li id="teste4" title="tta">teste4</li>
+    <li id="teste5">teste5</li>
+  </ul>
+  <script src="../jQuery.js"></script>
+  <script>
+    $(function () {
+      // formas de seleção
+      $("#lista").css("background", "#f555");
+      $(".teste1").css("color", 'violet');
+      $(".teste2").css("background", 'yellow');
+      $("[name='teste3']").css("background", '#fff')
+      $("[title='tta']").css("background", '#000').css("color", "white")
+      $("li[id='teste5']").css("background", '#af9')
+    })
+  </script>
+</body>
+
+</html>

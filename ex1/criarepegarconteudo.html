@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images</title>
+  <style>
+    body {
+      background-color: rgba(54, 52, 52, 0.515);
+    }
+
+    img {
+      width: 50px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<!-- 
+  Seção 37 
+  Aula 165
+ -->
+
+<body>
+  <ul>
+    <li>gg</li>
+  </ul>
+
+  <script src="../jQuery.js"></script>
+  <script>
+    $(function () {
+      $('<li><img src="../img/2.jpg" alt="a5"></li>').insertBefore("li:first-child");
+    })
+  </script>
+</body>
+
+</html>

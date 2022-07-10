@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+</head>
+
+<body>
+
+  <!-- 
+  seção 36
+  aula 161
+ -->
+
+  <h1>oi</h1>
+  <nav>
+    <a href="arquivo.zip">Brasil</a>
+    <a href="arquivo.pdf">Brasil 1</a>
+    <a href="arquivo.pdf">Brasil 2</a>
+    <a href="arquivo.zip">Brasil 3</a>
+  </nav>
+
+  <a href="#">Brasil 2</a>
+
+  <script src="../jQuery.js"></script>
+
+  <script>
+    // alert("a pag contem " + $('nav a').length + ' links')
+    $(function () {
+
+      $("a").css("color", "yellow")
+      $("nav a").css("color", "red").css("display", "block")
+      // a:first só pro primeiro
+      // a:last para o ultimo
+      // a:even para os pares
+      // a:nth(2) paror indices
+      // a:contains('Brasil ') por conteudo
+
+
+      $("a[href$='.pdf']").before('**')
+      $("a[href$='.zip']").before('<img src="../img/setaprBaibo.png" alt="">').css($("img").css('width', '50px'))
+
+
+      // .after na frente
+      // .before a tras
+    })
+
+  </script>
+
+</body>
+
+
+
+
+
+
+</html>

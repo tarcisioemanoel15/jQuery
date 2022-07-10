@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images</title>
+  <style>
+    body {
+      background-color: rgba(54, 52, 52, 0.515);
+    }
+
+    img {
+      width: 50px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><img src="../img/1.jpg" alt="a1"></li>
+    <li><img src="../img/1.png" alt="a2"></li>
+    <li><img src="../img/10.jpg" alt="a3"></li>
+    <li><img src="../img/11.jpg" alt="a4"></li>
+  </ul>
+  <!-- 
+  Sção 37
+  Aula 164
+  -->
+  <script src="../jQuery.js"></script>
+  <script>
+    $(function () {
+      $('<li><img src="../img/2.jpg" alt="a5"></li>').insertBefore("li:first-child");
+      $('<li><img src="../img/3.jpg" alt="a6"></li>').insertAfter("li:nth(1)");
+    })
+  </script>
+</body>
+
+</html>
