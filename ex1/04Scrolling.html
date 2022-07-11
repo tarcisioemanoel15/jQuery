@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #janela {
+      position: absolute;
+      top: 120px;
+      left: 100px;
+      width: 200px;
+      height: 200px;
+      background-color: #069;
+      border: 5px solid #000;
+    }
+
+    #janelinha {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 31, 6);
+      border: 5px solid #000;
+
+    }
+  </style>
+  <title>Iniciando seção 38</title>
+</head>
+
+<body>
+
+  <h1>Detectando as dimensões da janela de um documento</h1>
+  <div id="janela">
+    <div id="janelinha"></div>
+  </div>
+
+
+  <script src="../jQuery.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+
+      console.log('a altura é ' + $(window).height());
+      console.log('a largura é ' + $(window).width());
+      console.log('a altura é ' + $(document).height());
+      console.log('a largura é ' + $(document).width());
+      console.log('');
+      console.log('');
+      console.log('posição top do elemento ' + $('#janela').position().top);
+      console.log('posição left do elemento ' + $('#janela').position().left);
+      console.log('');
+      console.log('posição top do elemento ' + $('#janelinha').position().top);
+      console.log('posição left do elemento ' + $('#janelinha').position().left);
+
+      console.log('');
+      // pegando o pai o que esta a cima
+      $('#janelinha').offsetParent().css('background', '#ff0');
+
+
+    });
+  </script>
+</body>
+
+</html>

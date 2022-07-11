@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images</title>
+  <style>
+    body {
+      background-color: rgba(82, 65, 65, 0.515);
+    }
+
+    img {
+      width: 50px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<!-- 
+  Seção 37 
+  Aula 165
+ -->
+
+<body>
+  <h1></h1>
+  <ul id="litacursos">
+    <li>Curo HTML</li>
+    <li>Curo CSS</li>
+    <li>Curo JQUERY</li>
+    <li>Curo JAVASCRIPT</li>
+  </ul>
+
+  <a href="../img/setaprBaibo.png"><img src="../img/setaprBaibo.png" alt=""></a>
+
+  <script src="../jQuery.js"></script>
+  <script>
+    $(function () {
+      $("h1").html('curso de desenvolvimento web')
+      $('ul#litacursos').prepend("<li>curso PHP</li>")
+      $('ul#litacursos').append("<li>curso BOOTSTRAP</li>")
+
+      // Adicionando ou removendo atriutos
+
+      $("a").attr("title", "seta pra baixo");
+      $("a").attr("target", "_blank");
+      $("a").removeAttr("target");
+
+      // excluir alterar e enbrulhar
+
+      // remover o primeiro "li:first" 
+      $("li:last").remove();
+      $("li:last").replaceWith("<li>jQuery</li>");
+      $("ul").wrapAll("<div style='border:1px solid #ccc'></div>")
+
+    })
+  </script>
+</body>
+
+</html>
