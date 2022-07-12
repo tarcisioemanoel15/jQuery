@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alterar scrilll de uma pag </title>
-
   <style>
     nav ul {
       margin: 0;
@@ -17,8 +16,8 @@
     nav li {
       position: fixed;
       list-style-type: none;
-      width: 70px;
-      height: 70px;
+      width: 25px;
+      height: 25px;
       background: yellow;
       margin-bottom: 1px;
       cursor: pointer;
@@ -27,47 +26,100 @@
     }
 
     #primeia {
-      width: 300px;
-      height: 800px;
+      width: 100%;
+      height: 80px;
       background-color: aqua;
     }
 
     #segunda {
-      width: 300px;
-      height: 800px;
+      width: 100%;
+      height: 80px;
       background-color: rgb(0, 255, 115);
+    }
+
+    #terceira {
+      width: 100%;
+      height: 80px;
+      background-color: rgb(255, 47, 0);
     }
 
     .as1 {
       bottom: 71%;
-      left: 35%;
+      left: 2%;
+    }
+
+    .as2 {
+      bottom: 71%;
+      left: 11%;
+    }
+
+    .as3 {
+      bottom: 71%;
+      left: 20%;
+    }
+
+    @media screen and (max-width: 350px) {
+      .as1 {
+        bottom: 90%;
+        left: 2%;
+      }
+
+      .as2 {
+        bottom: 85%;
+        left: 2%;
+      }
+
+      .as3 {
+        bottom: 80%;
+        left: 2%;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <h1>!!!!!!!!!!!!!!</h1>
 
   <nav>
     <ul>
-      <li class="as1">a</li>
-      <li>b</li>
+      <li class="as1"></li>
+      <li class="as2"></li>
+      <li class="as3"></li>
     </ul>
   </nav>
 
-
   <div id="primeia"></div>
   <div id="segunda"></div>
-
-
+  <div id="terceira"></div>
 
   <script src="../jQuery.js"></script>
   <script>
-    $(function (e) {
+    $(function () {
+      const altura = $(window).height();
+      function redimencionar() {
+        $('#segunda').css('height', altura);
+        $('#primeia').css('height', altura);
+        $('#terceira').css('height', altura);
+      }
+
+      $('nav li:nth-child(1)').click(function (e) {
+        $('html, body').animate({ scrollTop: $('#primeia').offset().top }, 1000)
+      })
+
       $('nav li:nth-child(2)').click(function (e) {
-        console.log()
         $('html, body').animate({ scrollTop: $('#segunda').offset().top }, 1000)
       })
+
+      $('nav li:nth-child(3)').click(function (e) {
+        $('html, body').animate({ scrollTop: $('#terceira').offset().top }, 1000)
+      })
+
+      $(window).resize(function (e) {
+        redimencionar();
+      })
+
+      redimencionar();
     })
   </script>
 </body>

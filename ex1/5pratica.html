@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praticando ex anterior</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .lista {
+      position: fixed;
+      display: flex;
+      background-color: rgba(45, 48, 48, 0.485);
+      width: 90%;
+      left: 3%;
+    }
+
+    li {
+      margin: 10px auto;
+      list-style: none;
+    }
+
+
+    #primeira {
+      width: 100%;
+      height: 800px;
+      background-color: rgb(12, 142, 142);
+    }
+
+    #segunda {
+      width: 100%;
+      height: 800px;
+      background-color: rgb(255, 21, 0);
+    }
+
+    #terceira {
+      width: 100%;
+      height: 800px;
+      background-color: rgb(9, 255, 0);
+    }
+
+    #quarta {
+      width: 100%;
+      height: 800px;
+      background-color: rgb(255, 251, 0);
+    }
+
+    @media screen and (max-width: 600px) {
+      .lista {
+        display: block;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="lista">
+      <li><a href="#primeira"><button class="btn1">1 pagina</button></a></li>
+      <li><a href="#segunda"><button class="btn2">2 pagina</button></a></li>
+      <li><a href="#terceira"><button class="btn3">3 pagina</button></a></li>
+      <li><a href="#quarta"><button class="btn4">4 pagina</button></a></li>
+    </ul>
+  </div>
+
+  <div id="primeira"></div>
+  <div id="segunda"></div>
+  <div id="terceira"></div>
+  <div id="quarta"></div>
+  <script src="../jQuery.js"></script>
+  <script>
+    $(function () {
+
+      const altura = $(window).height();
+
+      // $('#primeira').append('<h1>oi</h1>').css('font-size', '1000%')
+      // $('#primeira').append('<h1>12345</h1>').css('font-size', '500%')
+      $('#primeira').append('<img src="../img/6.jpg" alt="ing">').css('width', '500%')
+
+
+      function redimencionar() {
+        $('primeira').css('heiht', altura);
+        $('segunda').css('heiht', altura);
+        $('terceira').css('heiht', altura);
+        $('quarta').css('heiht', altura);
+      }
+
+
+      $('.btn1').css('background-color', 'rgb(12, 142, 142)');
+      $('.btn2').css('background-color', 'rgb(255, 21, 0)');
+      $('.btn3').css('background-color', 'rgb(9, 255, 0)');
+      $('.btn4').css('background-color', 'rgb(255, 251, 0)');
+
+      //rolagem
+      $('.lista li:nth-child(1)').click(function (e) {
+        $('html, body').animate({ scrollTop: $('#primeira').offset().top }, 1000)
+      })
+      $('.lista .btn2').click(function (e) {
+        $('html, body').animate({ scrollTop: $('#segunda').offset().top }, 1000)
+      })
+      $('.lista li [href="#terceira"]').click(function (e) {
+        $('html, body').animate({ scrollTop: $('#terceira').offset().top }, 1000)
+      })
+      $('.lista li:nth-child(4)').click(e => {
+        $('html, body').animate({ scrollTop: $('#quarta').offset().top }, 1000)
+      })
+
+      $(window).resize(() => {
+        redimencionar();
+      })
+      redimencionar();
+      console.log($('ul').length);
+
+    })
+  </script>
+</body>
+
+</html>
