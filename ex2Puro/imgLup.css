@@ -1,0 +1,36 @@
+body {
+  background: rgb(147, 147, 37);
+}
+
+main {
+  width: 200px;
+  position: absolute;
+  clip: rect(0 200px 200px 0);
+}
+
+.contain {
+  display: flex;
+  background: turquoise;
+  width: 200px;
+  position: absolute;
+  animation: anima 20s infinite linear;
+}
+
+img {
+  width: 200px;
+  transition: 2s;
+}
+
+li {
+  list-style: none;
+}
+
+@keyframes anima {
+  from {
+    left: -500%;
+  }
+
+  to {
+    left: 0;
+  }
+}
