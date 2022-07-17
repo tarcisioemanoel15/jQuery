@@ -7,19 +7,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventos</title>
   <style>
-
+    #janela {
+      width: 300px;
+      height: 300px;
+      background: #069;
+      margin-top: 20px;
+      border: solid 5px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 
 <body>
+  <input type="button" value="curso html" id="cursohtml">
+  <input type="button" value="curso css" id="cursocss">
+  <input type="button" value="hover" id="cursohover">
 
 
+  <div id="janela"></div>
 
 
 
   <script src="../jQuery.js"></script>
   <script>
+    // Eventos de click
+    $(function () {
+      $('[value="curso html"]').click(function () {
+        //essa janela ta sendo escondida na outra função
+        $('#janela').show();
+        alert('clicou')
+      });
+      function mostrarmsg() {
+        alert('mause por cima css')
+        //desa forma sera ezecutada so uma vez
+        $('#cursocss').off('mouseover', mostrarmsg)
+        // se colocar só off mata todos eventos do elemento
+      }
+      $('#cursocss').on('mouseover', mostrarmsg)
+      function mostrarmsg1() {
+        alert('clicou css')
+        // $('#cursocss').off('mouseover', mostrarmsg1)
+      }
+      $('#cursocss').on('click', mostrarmsg1)
+      // esconendo a janela
+    })
 
+    // Escondendo objet
+    $(function () {
+      // $('#janela').hide();
+      $('#cursocss').click(mostrarelemento);
+      $('#cursohover').hover(escondrel, mostrarelemento);
+    })
+
+    function escondrel() {
+      $('#janela').show();
+    }
+    function mostrarelemento() {
+      $('#janela').hide();
+    }
 
 
   </script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #janela {
+      border: 5px solid;
+      width: 200px;
+      height: 200px;
+      margin-top: 10px;
+    }
+  </style>
+
+  <title>Enviando parametros</title>
+</head>
+
+<body>
+
+  <input type="button" value="a1" id="btna1">
+  <input type="button" value="a2" id="btna2">
+  <input type="button" value="a3" id="btna3">
+  <input type="button" value="a4" id="btna4">
+  <button id="btna5">!slideToggle!</button>
+
+  <div id="janela"></div>
+
+
+
+  <script src="../jQuery.js"></script>
+  <script>
+
+    $('#btna5').click(function () {
+      $('#janela').slideToggle()
+    })
+
+    $(function () {
+      $('#btna1').on('click', click1);
+      $('#btna3').on('click', click3);
+      $('#btna4').on('click', click4);
+
+      $('#btna2').click(function () {
+        //           sumindo          depois                     aparecendo
+        $('#janela').fadeOut(1000).css('background', 'orange').fadeIn(1000)
+      })
+    })
+
+    function click1() {
+      $('#janela').css('background', 'yellow').toggle(300)
+    }
+
+    function click3() {
+      $('#janela').slideUp(300)
+
+    }
+    function click4() {
+      $('#janela').slideDown(300)
+
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

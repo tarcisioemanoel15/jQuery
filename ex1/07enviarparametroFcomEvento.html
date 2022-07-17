@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #janela {
+      border: 5px solid;
+      width: 200px;
+      height: 200px;
+      margin-top: 10px;
+    }
+  </style>
+
+  <title>Enviando parametros</title>
+</head>
+
+<body>
+
+  <input type="button" value="azul" id="btnAzul">
+  <input type="button" value="vermelho" id="btnVermelho">
+  <input type="button" value="verde" id="btnVerde">
+
+  <div id="janela"></div>
+
+
+
+  <script src="../jQuery.js"></script>
+  <script>
+
+    function appCor(e) {
+      const coor = e.data.cor;
+
+      $('#janela').css('background', coor);
+      $('#janela').css('width', e.data.largura);
+
+    }
+
+    $(function () {
+      $('#btnAzul').on('click', { cor: 'blue', largura: '100px' }, appCor);
+      $('#btnVermelho').click({ cor: 'red', largura: '200px' }, appCor);
+      $('#btnVerde').on('click', { cor: 'green', largura: '1000px' }, appCor);
+    })
+
+
+  </script>
+</body>
+
+</html>

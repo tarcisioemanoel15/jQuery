@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #janela {
+      position: absolute;
+      border: 5px solid;
+      width: 200px;
+      height: 200px;
+      margin-top: 10px;
+    }
+  </style>
+
+  <title>Enviando parametros</title>
+</head>
+
+<body>
+
+  <input type="button" value="a0" id="btna0">
+  <input type="button" value="a1" id="btna1">
+  <input type="button" value="a2" id="btna2">
+
+
+  <div id="janela"></div>
+
+
+
+  <script src="../jQuery.js"></script>
+  <script>
+    function moverObj() {
+      $('#janela').animate({
+        // opacity: 0.25,
+        left: "300px"
+      }, 1000)
+    }
+
+    function moverObj1() {
+      $('#janela').animate({
+        // opacity: 0.25,
+        left: "0px"
+      }, 1000)
+    }
+
+
+    function moverObj2() {
+      $('#janela').toggle(10000)
+    }
+
+
+    $(function (e) {
+      $("#btna1").click(moverObj);
+      $("#btna0").click(moverObj1);
+      $("#btna2").click(moverObj2);
+    })
+
+
+  </script>
+</body>
+
+</html>
